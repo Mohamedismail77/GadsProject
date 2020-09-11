@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/submit_graph"
+    app:startDestination="@id/submitFormFragment"
+    >
+
+    <fragment
+        android:id="@+id/submitFormFragment"
+        android:name="com.ismail.gads.ui.SubmitFormFragment"
+        android:label="fragment_submit_form"
+        tools:layout="@layout/fragment_submit_form" >
+        <action
+            android:id="@+id/action_submitFormFragment_to_submitPopup"
+            app:destination="@id/submitPopup" />
+        <action
+            android:id="@+id/action_submitFormFragment_to_errorPopup"
+            app:destination="@id/errorPopup" />
+        <action
+            android:id="@+id/action_submitFormFragment_to_sucessPopup"
+            app:destination="@id/sucessPopup" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/submitPopup"
+        android:name="com.ismail.gads.ui.SubmitPopup"
+        android:label="SubmitPopup" />
+
+    <dialog
+        android:id="@+id/errorPopup"
+        android:name="com.ismail.gads.ui.ErrorPopup"
+        android:label="SubmitPopup" />
+
+    <dialog
+        android:id="@+id/sucessPopup"
+        android:name="com.ismail.gads.ui.SucessPopup"
+        android:label="SubmitPopup" />
+
+</navigation>

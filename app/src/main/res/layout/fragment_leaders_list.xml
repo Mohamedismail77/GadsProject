@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+        <data>
+                <import type="com.ismail.gads.GADsProject.States"/>
+                <variable
+                    name="gadsProject"
+                    type="com.ismail.gads.GADsProject" />
+
+                <variable
+                    name="recordsAdapter"
+                    type="com.ismail.gads.RecordListAdapter" />
+
+                <variable
+                    name="topic"
+                    type="String" />
+
+        </data>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.LeadersListFragment"
+    >
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:isActive="@{gadsProject.states}"
+            android:id="@+id/swipeToRefresh"
+            >
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/list_item"
+            android:id="@+id/rvItemList"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:data="@{gadsProject.leadersList}"
+            />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</FrameLayout>
+</layout>

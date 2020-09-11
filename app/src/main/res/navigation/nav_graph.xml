@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/splashScreen">
+    <fragment
+        android:id="@+id/splashScreen"
+        android:name="com.ismail.gads.SplashScreen"
+        android:label="fragment_splash_screen"
+        tools:layout="@layout/fragment_splash_screen" >
+        <action
+            android:id="@+id/action_splashScreen_to_leaderBoardFragment"
+            app:destination="@id/leaderBoardFragment"
+            app:popUpTo="@id/splashScreen"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/leaderBoardFragment"
+        android:name="com.ismail.gads.ui.LeaderBoardFragment"
+        android:label="fragment_leader_board"
+        tools:layout="@layout/fragment_leader_board" >
+        <action
+            android:id="@+id/action_leaderBoardFragment_to_submitActivity"
+            app:destination="@id/submitActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/submitActivity"
+        android:name="com.ismail.gads.ui.SubmitActivity"
+        android:label="activity_submit"
+        tools:layout="@layout/activity_submit" />
+</navigation>
